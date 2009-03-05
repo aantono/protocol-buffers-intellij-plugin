@@ -16,20 +16,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lexer/proto.flex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ws/antonov/idea/plugin/protobuf/language/ProtoLanguage.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ws/antonov/idea/plugin/protobuf/filetype/ProtoFileType.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/google.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ws/antonov/idea/plugin/protobuf/ProtocolBuffersSupportLoader.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/META-INF/plugin.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ws/antonov/idea/plugin/protobuf/ProtoElementType.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ws/antonov/idea/plugin/protobuf/highlighting/ProtoHighlighter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ProtoBufPlugin.ipr" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ws/antonov/idea/plugin/protobuf/lexer/_ProtobufLexer.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ws/antonov/idea/plugin/protobuf/ProtoSupportLoader.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ProtoBufPlugin.iws" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ws/antonov/idea/plugin/protobuf/ProtoTokenTypes.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ProtoBufPlugin.iws" afterPath="$PROJECT_DIR$/ProtoBufPlugin.iws" />
     </list>
     <ignored path=".idea/workspace.xml" />
     <ignored path="ProtoBufPlugin.iws" />
@@ -759,7 +746,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
-    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="PERFORM_UPDATE_IN_BACKGROUND" value="false" />
     <option name="PERFORM_COMMIT_IN_BACKGROUND" value="false" />
     <option name="PERFORM_EDIT_IN_BACKGROUND" value="true" />
