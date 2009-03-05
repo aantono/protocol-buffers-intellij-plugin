@@ -1,0 +1,13 @@
+<!DOCTYPE idea-plugin PUBLIC "Plugin/DTD" "http://plugins.intellij.net/plugin.dtd">
+<idea-plugin>
+  <name>Protocol Buffers</name>
+  <description>Support for Google Protocol Buffers definition markup files</description>
+  <version>1.0</version>
+  <vendor>Alex Antonov</vendor>
+  <idea-version since-build="3000"/>
+    <application-components>
+        <component>
+            <implementation-class>ws.antonov.idea.plugin.protobuf.ProtoSupportLoader</implementation-class>
+        </component>
+    </application-components>
+</idea-plugin>
