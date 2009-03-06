@@ -1,0 +1,10 @@
+
+
+== Compiling proto.flex into a Lexer ==
+To compile the flex grammar into an InteliJ Lexer class you need to use the jflex tool (available as part of the Idea Plugin SDK)
+
+1. From IDEA_SDK_HOME/tools/jflex/bin start ./jflex.sh --charat
+2. In the UI go to OPTIONS (click the Options button) and select a skeleton from IDEA_SDK_HOME/tools/jflex/idea-flex.skeleton
+3. Choose lexer/proto.flex as a Lexical specification
+4. Choose src/ws/antonov/idea/plugin/protobuf/lexer as an output directory
+5. Click Generate button to regenerate the new Lexer to be used by the plugin
