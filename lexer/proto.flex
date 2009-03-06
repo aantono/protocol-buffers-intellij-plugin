@@ -2,9 +2,22 @@ package ws.antonov.idea.plugin.protobuf.lexer;
 
 import com.intellij.lexer.FlexLexer;
 import com.intellij.psi.tree.IElementType;
-import ws.antonov.idea.plugin.protobuf.ProtoTokenTypes;
+import ws.antonov.idea.plugin.protobuf.lexer.ProtoTokenTypes;
 
 %%
+
+%class _ProtobufLexer
+%public
+%implements ProtoTokenTypes, FlexLexer
+%unicode
+%function advance
+%type IElementType
+%eof{  return;
+%eof}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////// User code //////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 %{
     public _ProtobufLexer(boolean highlightMode) {
@@ -16,83 +29,139 @@ import ws.antonov.idea.plugin.protobuf.ProtoTokenTypes;
 
 %}
 
-%class _ProtobufLexer
-%public
-%implements FlexLexer
-%unicode
-%function advance
-%type IElementType
-%eof{  return;
-%eof}
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////// NewLines and spaces /////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-LineTerminator = \r|\n|\r\n
-InputCharacter = [^\r\n]
-WhiteSpace     = {LineTerminator} | [ \t\f]
-DecIntegerLiteral = 0 | [1-9][0-9]*
-CommentOld     = "//" {InputCharacter}* {LineTerminator}
-Comment="/""/"[^\r\n]*
+mNL = \r | \n | \r\n                                    // NewLines
+mWS = " " | "," | \t | \f | {mNL}                       // Whitespaces
 
-DIGIT=[0-9]
-OCTAL_DIGIT=[0-7]
-HEX_DIGIT=[0-9A-Fa-f]
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////// Parens, Squares, Curleys, Quotes /////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-DECIMAL_INTEGER_LITERAL=(0|([1-9](0-9)*))
-HEX_INTEGER_LITERAL=0[Xx]({HEX_DIGIT})*
-IntegerLiteral={DECIMAL_INTEGER_LITERAL}|{HEX_INTEGER_LITERAL}
+mLP = "("
+mRP = ")"
+mLS = "["
+mRS = "]"
+mLC = "{"
+mRC = "}"
 
-FloatingPointLiteral=({FLOATING_POINT_LITERAL1})|({FLOATING_POINT_LITERAL2})|({FLOATING_POINT_LITERAL3})|({FLOATING_POINT_LITERAL4})
-FLOATING_POINT_LITERAL1=(0-9)+"."({DIGIT})*({EXPONENT_PART})?
-FLOATING_POINT_LITERAL2="."({DIGIT})+({EXPONENT_PART})?
-FLOATING_POINT_LITERAL3=({DIGIT})+({EXPONENT_PART})
-FLOATING_POINT_LITERAL4=({DIGIT})+
-EXPONENT_PART=[Ee]["+""-"]?({DIGIT})*
+mQUOTE = "'"
+mBACKQUOTE = "`"
+mPOUNDUP = {mPOUND} {mUP}
+mUP = "^"
+mPOUND = "#"
+mPERCENT = "%"
+mTILDA = "~"
+mAT = "@"
+mTILDAAT = {mTILDA} {mAT}
 
-CRLF= [\ \t \f]* (\n | \r | \r\n)
-QuotedLiteral="'"([^\\\'\r\n]|{ESCAPE_SEQUENCE}|\\{CRLF})*("'"|\\)?
-DoubleQuotedLiteral=\"([^\\\"\r\n]|{ESCAPE_SEQUENCE}|\\{CRLF})*(\"|\\)?
-ESCAPE_SEQUENCE=\\[^\r\n]
-GROUP = "[" [^\\]]* "]"
 
-%state STRING
-%state COMMENT
-%state FIELD_LINE
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////// Strings ////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//mHEX_DIGIT = [0-9A-Fa-f]
+
+//mSTRING_ESC = \\ n | \\ r | \\ t | \\ b | \\ f | "\\" "\\" | \\ \" | \\ \'
+//| "\\""u"{mHEX_DIGIT}{4}
+//| "\\" [0..3] ([0..7] ([0..7])?)?
+//| "\\" [4..7] ([0..7])?
+//| "\\" {mNL}
+
+//mSTRING = \"
+//    ( {mSTRING_ESC}
+//        | "\""
+//        | [^\\\'\r\n]
+//    )* \"
+
+mSTRING = \" [^\"]* \"
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////// Comments ////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+mLINE_COMMENT = "//" [^\r\n]* {mNL}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////      integers and floats     /////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+mDIGIT = [0-9]
+
+// Integer
+mINTEGER = {mDIGIT}+
+
+//Float
+mFLOAT = {mDIGIT}+ "." {mDIGIT}+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////      identifiers      ////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+mLETTER = [A-Z] | [a-z]
+mSLASH_LETTER = \\ ({mLETTER} | .)
+
+// | \\ r | \\ t | \\ b | \\ f | "\\" "\\" | \\ \" | \\ \'
+//                   | "\\""u"{mHEX_DIGIT}{4}
+//                   | "\\" [0..3] ([0..7] ([0..7])?)?
+//                   | "\\" [4..7] ([0..7])?
+//                   | "\\" {mNL}
+
+mOTHER = "_" | "-" | "*" | "." | "+" | "=" | "&" | "<" | ">" | "$" | "/" | "?" | "!"
+
+mNoDigit = ({mLETTER} | {mOTHER} | {mSLASH_LETTER})
+mIDENT = {mNoDigit} ({mNoDigit} | {mDIGIT})*
+mKEY = ":" {mIDENT}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////      predefined      ////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+mT = 't' | 'T'
+mNIL = "nil" | "NIL"
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////  states ///////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 %%
+<YYINITIAL>{
 
-/* keywords */
-<YYINITIAL> "package"           {return ProtoTokenTypes.PACKAGE;}
-<YYINITIAL> "option"            {return ProtoTokenTypes.OPTION;}
-<YYINITIAL> "message"           {return ProtoTokenTypes.MESSAGE;}
+  {mLINE_COMMENT}                           {  return COMMENT; }
 
-<YYINITIAL> "required"           {yybegin(FIELD_LINE); System.out.println(yytext()); return ProtoTokenTypes.REQUIRED;}
-<YYINITIAL> "optional"           {yybegin(FIELD_LINE); return ProtoTokenTypes.OPTIONAL;}
-<YYINITIAL> "repeated"           {yybegin(FIELD_LINE); return ProtoTokenTypes.REPEATED;}
+  {mWS}+                                    {  return WHITE_SPACE; }
+
+  {mINTEGER}                                {  return NUMERIC_LITERAL; }
+  {mFLOAT}                                  {  return NUMERIC_LITERAL; }
+//  {mT}                                      {  return T; }
+//  {mNIL}                                    {  return NIL; }
+  {mIDENT}                                  {  return KEYWORD; }
+//  {mKEY}                                    {  return COLON_SYMBOL; }
+
+//  {mQUOTE}                                  {  return QUOTE; }
+//  {mBACKQUOTE}                              {  return BACKQUOTE; }
+//  {mPOUND}                                  {  return POUND; }
+//  {mUP}                                     {  return UP; }
+//  {mPOUNDUP}                                {  return POUNDUP; }
+//  {mPERCENT}                                {  return PERCENT; }
+//  {mTILDA}                                  {  return TILDA; }
+//  {mAT}                                     {  return AT; }
+//  {mTILDAAT}                                {  return TILDAAT; }
 
 
-/* comments */
-  {Comment}                     { return ProtoTokenTypes.COMMENT; }
+  {mLP}                                     {  return LEFT_PAREN; }
+  {mRP}                                     {  return RIGHT_PAREN; }
+  {mLS}                                     {  return LEFT_BRACKET; }
+  {mRS}                                     {  return RIGHT_BRACKET; }
+  {mLC}                                     {  return LEFT_CURLY; }
+  {mRC}                                     {  return RIGHT_CURLY; }
 
-/* whitespace */
-  {WhiteSpace}                  { return ProtoTokenTypes.WHITE_SPACE; }
+  {mSTRING}                                 {  return STRING_LITERAL; }
 
-<COMMENT> {
-    {InputCharacter}	        {
-                                    System.out.println(yytext());
-                                }
-
-	{LineTerminator}	        {
-                                    yybegin(YYINITIAL); return ProtoTokenTypes.COMMENT;
-                                }
 }
 
-{IntegerLiteral}|{FloatingPointLiteral}            { return ProtoTokenTypes.NUMERIC_LITERAL; }
-    {DoubleQuotedLiteral}|{QuotedLiteral}              { return ProtoTokenTypes.STRING_LITERAL; }
+// Anything else is should be marked as a bad char
+.                                {  return BAD_CHARACTER; }
 
-<FIELD_LINE> {
-    {LineTerminator}	        {
-                                    yybegin(YYINITIAL); return ProtoTokenTypes.WHITE_SPACE;
-                                }
-}
-
-/* do nothing fallback */
-.|\n                             { /* ignore */ }

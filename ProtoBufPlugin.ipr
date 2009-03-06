@@ -236,17 +236,14 @@
   <component name="ProjectDetails">
     <option name="projectName" value="ProtoBufPlugin" />
   </component>
-  <component name="ProjectFileVersion" converted="true">
-    <converter id="javaee-modules" />
-    <converter id="ror-modules" />
-    <converter id="SelenaRunConfToDiana" />
-  </component>
+  <component name="ProjectFileVersion" converted="true" />
   <component name="ProjectKey">
     <option name="state" value="project:///Users/aantonov/java-dev/ProtoBufPlugin/ProtoBufPlugin.ipr" />
   </component>
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/ProtoBufPlugin.iml" filepath="$PROJECT_DIR$/ProtoBufPlugin.iml" />
+      <module fileurl="file:///Users/aantonov/java-dev/clojure-intellij-plugin-read-only/clojure-intellij-plugin.iml" filepath="/Users/aantonov/java-dev/clojure-intellij-plugin-read-only/clojure-intellij-plugin.iml" />
     </modules>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_5" assert-keyword="true" jdk-15="true" project-jdk-name="IDEA 9732" project-jdk-type="IDEA JDK">
@@ -268,6 +265,7 @@
   </component>
   <component name="SvnBranchConfigurationManager">
     <option name="myVersion" value="123" />
+    <option name="mySupportsUserInfoFilter" value="true" />
   </component>
   <component name="ToggleTest">
     <toggle from="*" to="*UnitTest" />
@@ -275,6 +273,7 @@
   </component>
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
+    <mapping directory="/Users/aantonov/java-dev/clojure-intellij-plugin-read-only" vcs="svn" />
   </component>
   <component name="WebServicesPlugin" addRequiredLibraries="true" />
 </project>

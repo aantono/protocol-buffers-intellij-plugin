@@ -1,4 +1,4 @@
-package ws.antonov.idea.plugin.protobuf.highlighting;
+package ws.antonov.idea.plugin.protobuf;
 
 import com.intellij.lexer.FlexAdapter;
 import com.intellij.lexer.Lexer;
@@ -7,8 +7,10 @@ import com.intellij.openapi.editor.colors.TextAttributesKey;
 import com.intellij.openapi.fileTypes.SyntaxHighlighterBase;
 import com.intellij.psi.tree.IElementType;
 import org.jetbrains.annotations.NotNull;
-import ws.antonov.idea.plugin.protobuf.ProtoTokenTypes;
+import org.jetbrains.annotations.NonNls;
+import ws.antonov.idea.plugin.protobuf.lexer.ProtoTokenTypes;
 import ws.antonov.idea.plugin.protobuf.lexer._ProtobufLexer;
+import ws.antonov.idea.plugin.protobuf.lexer.ProtoFlexLexer;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -16,13 +18,21 @@ import java.util.Map;
 /**
  *
  */
-public class ProtoHighlighter extends SyntaxHighlighterBase {
+public class ProtoSyntaxHighlighter extends SyntaxHighlighterBase {
     private static Map<IElementType, TextAttributesKey> keys;
+
+    public ProtoSyntaxHighlighter() {
+        System.out.println("Creating ProtoSyntaxHighlighter");
+    }
 
     @NotNull
     public Lexer getHighlightingLexer() {
-        return new FlexAdapter(new _ProtobufLexer(true));
+        return new ProtoFlexLexer(true);
     }
+
+    @NonNls
+    static final String COMMENT_ID = "Line comment";
+
 
     static final TextAttributesKey PROTO_KEYWORD = TextAttributesKey.createTextAttributesKey(
             "JS.KEYWORD",
@@ -40,7 +50,7 @@ public class ProtoHighlighter extends SyntaxHighlighterBase {
     );
 
     static final TextAttributesKey PROTO_COMMENT = TextAttributesKey.createTextAttributesKey(
-            "JS.LINE_COMMENT",
+            "PROTO.LINE_COMMENT",
             SyntaxHighlighterColors.LINE_COMMENT.getDefaultAttributes()
     );
 

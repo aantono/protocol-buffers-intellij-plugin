@@ -1,10 +1,18 @@
 <!DOCTYPE idea-plugin PUBLIC "Plugin/DTD" "http://plugins.intellij.net/plugin.dtd">
 <idea-plugin>
-  <name>Protocol Buffers</name>
-  <description>Support for Google Protocol Buffers definition markup files</description>
-  <version>1.0</version>
-  <vendor>Alex Antonov</vendor>
-  <idea-version since-build="3000"/>
+
+    <name>Protocol Buffers</name>
+    <description>Support for Google Protocol Buffers definition markup files</description>
+    <version>1.0</version>
+    <vendor>Alex Antonov</vendor>
+    <idea-version since-build="8000"/>
+    <extensions defaultExtensionNs="com.intellij">
+        <fileTypeFactory implementation="ws.antonov.idea.plugin.protobuf.file.ProtoFileTypeLoader"/>
+        <syntaxHighlighter key="ProtocolBuffers" implementationClass="ws.antonov.idea.plugin.protobuf.ProtoSyntaxHighlighter"/>
+        <colorSettingsPage implementation="ws.antonov.idea.plugin.protobuf.ProtoColorsAndFontsPage"/>
+        <lang.foldingBuilder language="ProtocolBuffers" implementationClass="ws.antonov.idea.plugin.protobuf.ProtoFoldingBuilder"/>
+        <lang.braceMatcher language="ProtocolBuffers" implementationClass="ws.antonov.idea.plugin.protobuf.ProtoBraceMatcher"/>
+    </extensions>
     <application-components>
         <component>
             <implementation-class>ws.antonov.idea.plugin.protobuf.ProtoSupportLoader</implementation-class>

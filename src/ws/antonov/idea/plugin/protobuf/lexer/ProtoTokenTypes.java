@@ -1,8 +1,9 @@
-package ws.antonov.idea.plugin.protobuf;
+package ws.antonov.idea.plugin.protobuf.lexer;
 
 import com.intellij.psi.tree.IElementType;
 import com.intellij.psi.tree.TokenSet;
 import com.intellij.psi.TokenType;
+import ws.antonov.idea.plugin.protobuf.parser.ProtoElementType;
 
 /**
  * 
@@ -23,7 +24,9 @@ public interface ProtoTokenTypes {
 
     IElementType DEFAULT = new ProtoElementType("DEFAULT");
 
-    TokenSet KEYWORDS = TokenSet.create(PACKAGE, OPTION, MESSAGE, ENUM, REQUIRED, OPTIONAL, REPEATED, DEFAULT);
+    IElementType KEYWORD = new ProtoElementType("KEYWORD");
+
+    TokenSet KEYWORDS = TokenSet.create(PACKAGE, OPTION, MESSAGE, ENUM, REQUIRED, OPTIONAL, REPEATED, DEFAULT, KEYWORD);
 
     IElementType DOUBLE = new ProtoElementType("DOUBLE");
     IElementType FLOAT = new ProtoElementType("FLOAT");
@@ -48,12 +51,12 @@ public interface ProtoTokenTypes {
     IElementType STRING_LITERAL = new ProtoElementType("STRING_LITERAL");
     IElementType BOOLEAN_LITERAL = new ProtoElementType("BOOLEAN_LITERAL");
 
-    IElementType LBRACE = new ProtoElementType("LBRACE");// {
-    IElementType RBRACE = new ProtoElementType("RBRACE");// }
-    IElementType LPAR = new ProtoElementType("LPAR");// (
-    IElementType RPAR = new ProtoElementType("RPAR");// )
-    IElementType LBRACKET = new ProtoElementType("LBRACKET");// [
-    IElementType RBRACKET = new ProtoElementType("RBRACKET");// ]
+    IElementType LEFT_CURLY = new ProtoElementType("LEFT_CURLY");// {
+    IElementType RIGHT_CURLY = new ProtoElementType("RIGHT_CURLY");// }
+    IElementType LEFT_PAREN = new ProtoElementType("LEFT_PAREN");// (
+    IElementType RIGHT_PAREN = new ProtoElementType("RIGHT_PAREN");// )
+    IElementType LEFT_BRACKET = new ProtoElementType("LEFT_BRACKET");// [
+    IElementType RIGHT_BRACKET = new ProtoElementType("RIGHT_BRACKET");// ]
     IElementType DOT = new ProtoElementType("DOT");// .
     IElementType SEMICOLON = new ProtoElementType("SEMICOLON");// ;
     IElementType COMMA = new ProtoElementType("COMMA");// , 
