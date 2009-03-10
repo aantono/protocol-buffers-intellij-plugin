@@ -12,6 +12,7 @@
         <colorSettingsPage implementation="ws.antonov.idea.plugin.protobuf.ProtoColorsAndFontsPage"/>
         <lang.foldingBuilder language="ProtocolBuffers" implementationClass="ws.antonov.idea.plugin.protobuf.ProtoFoldingBuilder"/>
         <lang.braceMatcher language="ProtocolBuffers" implementationClass="ws.antonov.idea.plugin.protobuf.ProtoBraceMatcher"/>
+        <lang.parserDefinition language="ProtocolBuffers" implementationClass="ws.antonov.idea.plugin.protobuf.parser.ProtoParserDefinition"/>
     </extensions>
     <application-components>
         <component>

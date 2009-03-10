@@ -47,15 +47,17 @@ mRS = "]"
 mLC = "{"
 mRC = "}"
 
-mQUOTE = "'"
-mBACKQUOTE = "`"
-mPOUNDUP = {mPOUND} {mUP}
-mUP = "^"
-mPOUND = "#"
-mPERCENT = "%"
-mTILDA = "~"
-mAT = "@"
-mTILDAAT = {mTILDA} {mAT}
+mSEMICOLON = ";"
+mEQUALS = "="
+//mQUOTE = "'"
+//mBACKQUOTE = "`"
+//mPOUNDUP = {mPOUND} {mUP}
+//mUP = "^"
+//mPOUND = "#"
+//mPERCENT = "%"
+//mTILDA = "~"
+//mAT = "@"
+//mTILDAAT = {mTILDA} {mAT}
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -109,18 +111,22 @@ mSLASH_LETTER = \\ ({mLETTER} | .)
 //                   | "\\" [4..7] ([0..7])?
 //                   | "\\" {mNL}
 
-mOTHER = "_" | "-" | "*" | "." | "+" | "=" | "&" | "<" | ">" | "$" | "/" | "?" | "!"
+//TODO:  Double-check on what's allowed
+mOTHER = "_" | "-" | "*" | "." | "+" | "&" | "<" | ">" | "$" | "/" | "?" | "!"
 
 mNoDigit = ({mLETTER} | {mOTHER} | {mSLASH_LETTER})
 mIDENT = {mNoDigit} ({mNoDigit} | {mDIGIT})*
-mKEY = ":" {mIDENT}
+//mKEY = "=" ("" | [" "]*) {mIDENT}
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////      predefined      ////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-mT = 't' | 'T'
-mNIL = "nil" | "NIL"
+//mT = 't' | 'T'
+//mNIL = "nil" | "NIL"
+
+mOBJECT = "message" | "enum"
+mFIELD = "required" | "optional" | "repeated"
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////  states ///////////////////////////////////////////////////////////////////////////////////////////
@@ -135,11 +141,15 @@ mNIL = "nil" | "NIL"
 
   {mINTEGER}                                {  return NUMERIC_LITERAL; }
   {mFLOAT}                                  {  return NUMERIC_LITERAL; }
+  {mFIELD}                                  {  return FIELD_DEF; }
+  {mOBJECT}                                 {  return OBJECT_DEF; }
 //  {mT}                                      {  return T; }
 //  {mNIL}                                    {  return NIL; }
-  {mIDENT}                                  {  return KEYWORD; }
-//  {mKEY}                                    {  return COLON_SYMBOL; }
+  {mIDENT}                                  {  return KEY; }
+//  {mKEY}                                    {  return EQUALS; }
 
+  {mEQUALS}                                 { return EQUALS; }
+  {mSEMICOLON}                              { return SEMICOLON; }
 //  {mQUOTE}                                  {  return QUOTE; }
 //  {mBACKQUOTE}                              {  return BACKQUOTE; }
 //  {mPOUND}                                  {  return POUND; }

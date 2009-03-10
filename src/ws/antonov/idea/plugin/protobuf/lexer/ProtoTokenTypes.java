@@ -10,23 +10,23 @@ import ws.antonov.idea.plugin.protobuf.parser.ProtoElementType;
  */
 public interface ProtoTokenTypes {
     //IElementType IDENTIFIER = new ProtoElementType("IDENTIFIER");
-    IElementType WHITE_SPACE = TokenType.WHITE_SPACE;
-    IElementType BAD_CHARACTER = TokenType.BAD_CHARACTER;
-
     IElementType PACKAGE = new ProtoElementType("PACKAGE");
     IElementType OPTION  = new ProtoElementType("OPTION");
-    IElementType MESSAGE = new ProtoElementType("MESSAGE");
 
-    IElementType ENUM = new ProtoElementType("ENUM");
-    IElementType REQUIRED = new ProtoElementType("REQUIRED");
-    IElementType OPTIONAL  = new ProtoElementType("OPTIONAL");
-    IElementType REPEATED = new ProtoElementType("REPEATED");
+    IElementType FIELD_DEF = new ProtoElementType("FIELD_DEF");
+    IElementType OBJECT_DEF = new ProtoElementType("OBJECT_DEF");
+
+//    IElementType MESSAGE = new ProtoElementType("MESSAGE");
+//    IElementType ENUM = new ProtoElementType("ENUM");
+//    IElementType REQUIRED = new ProtoElementType("REQUIRED");
+//    IElementType OPTIONAL  = new ProtoElementType("OPTIONAL");
+//    IElementType REPEATED = new ProtoElementType("REPEATED");
 
     IElementType DEFAULT = new ProtoElementType("DEFAULT");
 
-    IElementType KEYWORD = new ProtoElementType("KEYWORD");
+    IElementType KEY = new ProtoElementType("KEY");
 
-    TokenSet KEYWORDS = TokenSet.create(PACKAGE, OPTION, MESSAGE, ENUM, REQUIRED, OPTIONAL, REPEATED, DEFAULT, KEYWORD);
+    TokenSet KEYWORDS = TokenSet.create(PACKAGE, OPTION, FIELD_DEF, OBJECT_DEF, DEFAULT, KEY);
 
     IElementType DOUBLE = new ProtoElementType("DOUBLE");
     IElementType FLOAT = new ProtoElementType("FLOAT");
@@ -51,6 +51,8 @@ public interface ProtoTokenTypes {
     IElementType STRING_LITERAL = new ProtoElementType("STRING_LITERAL");
     IElementType BOOLEAN_LITERAL = new ProtoElementType("BOOLEAN_LITERAL");
 
+    TokenSet LITERALS = TokenSet.create(STRING_LITERAL, NUMERIC_LITERAL, BOOLEAN_LITERAL);
+
     IElementType LEFT_CURLY = new ProtoElementType("LEFT_CURLY");// {
     IElementType RIGHT_CURLY = new ProtoElementType("RIGHT_CURLY");// }
     IElementType LEFT_PAREN = new ProtoElementType("LEFT_PAREN");// (
@@ -61,8 +63,17 @@ public interface ProtoTokenTypes {
     IElementType SEMICOLON = new ProtoElementType("SEMICOLON");// ;
     IElementType COMMA = new ProtoElementType("COMMA");// , 
 
-    IElementType EQ = new ProtoElementType("EQUALS");
+    IElementType EQUALS = new ProtoElementType("EQUALS");// =
 
     IElementType COMMENT = new ProtoElementType("COMMENT");
+    TokenSet COMMENTS = TokenSet.create(COMMENT);
 
+    // Control characters
+    IElementType EOL = new ProtoElementType("end of line");
+    IElementType EOF = new ProtoElementType("end of file");
+    IElementType WHITE_SPACE = TokenType.WHITE_SPACE;
+    IElementType BAD_CHARACTER = TokenType.BAD_CHARACTER;
+
+    TokenSet WHITESPACE_SET = TokenSet.create(EOL, EOF, WHITE_SPACE);
+    TokenSet STRINGS = TokenSet.create(STRING_LITERAL);
 }

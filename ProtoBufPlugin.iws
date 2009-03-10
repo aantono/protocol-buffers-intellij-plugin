@@ -15,28 +15,18 @@
     <option name="historyRevisionsNumber" value="4" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/ws/antonov/idea/plugin/protobuf/language/ProtoLanguage.java" afterPath="$PROJECT_DIR$/src/ws/antonov/idea/plugin/protobuf/ProtoLanguage.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ws/antonov/idea/plugin/protobuf/ProtoFoldingBuilder.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/ws/antonov/idea/plugin/protobuf/highlighting/ProtoHighlighter.java" afterPath="$PROJECT_DIR$/src/ws/antonov/idea/plugin/protobuf/ProtoSyntaxHighlighter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/ws/antonov/idea/plugin/protobuf/HighlighterTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/META-INF/plugin.xml" afterPath="$PROJECT_DIR$/META-INF/plugin.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lexer/proto.flex" afterPath="$PROJECT_DIR$/lexer/proto.flex" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/ws/antonov/idea/plugin/protobuf/filetype/ProtoFileType.java" afterPath="$PROJECT_DIR$/src/ws/antonov/idea/plugin/protobuf/file/ProtoFileType.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ws/antonov/idea/plugin/protobuf/ProtocolBuffersSupportLoader.java" afterPath="" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ws/antonov/idea/plugin/protobuf/file/ProtoFileTypeLoader.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ws/antonov/idea/plugin/protobuf/ProtoSupportLoader.java" afterPath="$PROJECT_DIR$/src/ws/antonov/idea/plugin/protobuf/ProtoSupportLoader.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ws/antonov/idea/plugin/protobuf/file/ProtoFile.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ws/antonov/idea/plugin/protobuf/ProtoBraceMatcher.java" />
+    <list default="true" readonly="true" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ws/antonov/idea/plugin/protobuf/parser/ProtoParser.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ws/antonov/idea/plugin/protobuf/lexer/ProtoTokenTypes.java" afterPath="$PROJECT_DIR$/src/ws/antonov/idea/plugin/protobuf/lexer/ProtoTokenTypes.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ws/antonov/idea/plugin/protobuf/parser/ProtoParserDefinition.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ProtoBufPlugin.iws" afterPath="$PROJECT_DIR$/ProtoBufPlugin.iws" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ProtoBufPlugin.ipr" afterPath="$PROJECT_DIR$/ProtoBufPlugin.ipr" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/ws/antonov/idea/plugin/protobuf/ProtoTokenTypes.java" afterPath="$PROJECT_DIR$/src/ws/antonov/idea/plugin/protobuf/lexer/ProtoTokenTypes.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/ws/antonov/idea/plugin/protobuf/ParserTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ws/antonov/idea/plugin/protobuf/ProtoColorsAndFontsPage.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/ws/antonov/idea/plugin/protobuf/ProtoElementType.java" afterPath="$PROJECT_DIR$/src/ws/antonov/idea/plugin/protobuf/parser/ProtoElementType.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/ws/antonov/idea/plugin/protobuf/ParserTest.java" afterPath="$PROJECT_DIR$/test/ws/antonov/idea/plugin/protobuf/ParserTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/META-INF/plugin.xml" afterPath="$PROJECT_DIR$/META-INF/plugin.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lexer/proto.flex" afterPath="$PROJECT_DIR$/lexer/proto.flex" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ws/antonov/idea/plugin/protobuf/parser/ProtoElementTypes.java" afterPath="$PROJECT_DIR$/src/ws/antonov/idea/plugin/protobuf/parser/ProtoElementTypes.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ws/antonov/idea/plugin/protobuf/lexer/_ProtobufLexer.java" afterPath="$PROJECT_DIR$/src/ws/antonov/idea/plugin/protobuf/lexer/_ProtobufLexer.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ws/antonov/idea/plugin/protobuf/parser/ProtoElementTypes.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ws/antonov/idea/plugin/protobuf/lexer/ProtoFlexLexer.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ws/antonov/idea/plugin/protobuf/parser/ProtoElement.java" />
     </list>
     <ignored path=".idea/workspace.xml" />
     <ignored path="ProtoBufPlugin.iws" />
@@ -56,7 +46,7 @@
   </component>
   <component name="DebuggerManager">
     <line_breakpoints>
-      <breakpoint url="file://$PROJECT_DIR$/src/ws/antonov/idea/plugin/protobuf/lexer/_ProtobufLexer.java" line="532" class="ws.antonov.idea.plugin.protobuf.lexer._ProtobufLexer" package="ws.antonov.idea.plugin.protobuf.lexer">
+      <breakpoint url="file://$PROJECT_DIR$/src/ws/antonov/idea/plugin/protobuf/lexer/_ProtobufLexer.java" line="580" class="ws.antonov.idea.plugin.protobuf.lexer._ProtobufLexer" package="ws.antonov.idea.plugin.protobuf.lexer">
         <option name="ENABLED" value="false" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -69,7 +59,7 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/ws/antonov/idea/plugin/protobuf/ProtoSyntaxHighlighter.java" line="69" class="ws.antonov.idea.plugin.protobuf.highlighting.ProtoHighlighter" package="ws.antonov.idea.plugin.protobuf.highlighting">
+      <breakpoint url="file://$PROJECT_DIR$/src/ws/antonov/idea/plugin/protobuf/ProtoSyntaxHighlighter.java" line="69" class="ws.antonov.idea.plugin.protobuf.ProtoSyntaxHighlighter" package="ws.antonov.idea.plugin.protobuf">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -82,7 +72,7 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/test/ws/antonov/idea/plugin/protobuf/ParserTest.java" line="75" class="ws.antonov.idea.plugin.protobuf.ParserTest" package="ws.antonov.idea.plugin.protobuf">
+      <breakpoint url="file://$PROJECT_DIR$/test/ws/antonov/idea/plugin/protobuf/ParserTest.java" line="118" class="ws.antonov.idea.plugin.protobuf.ParserTest" package="ws.antonov.idea.plugin.protobuf">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -95,7 +85,124 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/ws/antonov/idea/plugin/protobuf/ProtoSyntaxHighlighter.java" line="29" class="ws.antonov.idea.plugin.protobuf.highlighting.ProtoHighlighter" package="ws.antonov.idea.plugin.protobuf.highlighting">
+      <breakpoint url="file://$PROJECT_DIR$/src/ws/antonov/idea/plugin/protobuf/ProtoSyntaxHighlighter.java" line="29" class="ws.antonov.idea.plugin.protobuf.ProtoSyntaxHighlighter" package="ws.antonov.idea.plugin.protobuf">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="false" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/test/ws/antonov/idea/plugin/protobuf/ParserTest.java" line="110" class="ws.antonov.idea.plugin.protobuf.ParserTest" package="ws.antonov.idea.plugin.protobuf">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="false" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/ws/antonov/idea/plugin/protobuf/parser/ProtoParser.java" line="146" class="ws.antonov.idea.plugin.protobuf.parser.ProtoParser" package="ws.antonov.idea.plugin.protobuf.parser">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="false" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/ws/antonov/idea/plugin/protobuf/parser/ProtoParser.java" line="21" class="ws.antonov.idea.plugin.protobuf.parser.ProtoParser" package="ws.antonov.idea.plugin.protobuf.parser">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="false" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/ws/antonov/idea/plugin/protobuf/parser/ProtoParser.java" line="75" class="ws.antonov.idea.plugin.protobuf.parser.ProtoParser" package="ws.antonov.idea.plugin.protobuf.parser">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="false" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/test/ws/antonov/idea/plugin/protobuf/ParserTest.java" line="81" class="ws.antonov.idea.plugin.protobuf.ParserTest" package="ws.antonov.idea.plugin.protobuf">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="false" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/test/ws/antonov/idea/plugin/protobuf/ParserTest.java" line="92" class="ws.antonov.idea.plugin.protobuf.ParserTest" package="ws.antonov.idea.plugin.protobuf">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="false" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/ws/antonov/idea/plugin/protobuf/parser/ProtoParser.java" line="136" class="ws.antonov.idea.plugin.protobuf.parser.ProtoParser" package="ws.antonov.idea.plugin.protobuf.parser">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="false" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/ws/antonov/idea/plugin/protobuf/parser/ProtoElement.java" line="69" class="ws.antonov.idea.plugin.protobuf.parser.ProtoElement.Message" package="ws.antonov.idea.plugin.protobuf.parser">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="false" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/ws/antonov/idea/plugin/protobuf/parser/ProtoElement.java" line="60" class="ws.antonov.idea.plugin.protobuf.parser.ProtoElement.Option" package="ws.antonov.idea.plugin.protobuf.parser">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -166,46 +273,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="plugin.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file:///Users/aantonov/java-dev/clojure-intellij-plugin-read-only/META-INF/plugin.xml">
+      <file leaf-file-name="ProtoParser.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ws/antonov/idea/plugin/protobuf/parser/ProtoParser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="18" selection-start="769" selection-end="769" vertical-scroll-proportion="0.0">
+            <state line="75" column="0" selection-start="2541" selection-end="2541" vertical-scroll-proportion="-5.423077">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Expression.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file:///Users/aantonov/java-dev/clojure-intellij-plugin-read-only/src/org/clojure/intellij/parser/Expression.java">
+      <file leaf-file-name="proto.flex" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lexer/proto.flex">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="13" selection-start="655" selection-end="655" vertical-scroll-proportion="0.0">
+            <state line="147" column="57" selection-start="5933" selection-end="5933" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ClojureParser.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file:///Users/aantonov/java-dev/clojure-intellij-plugin-read-only/src/org/clojure/intellij/parser/ClojureParser.java">
+      <file leaf-file-name="ClojureElementTypes.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file:///Users/aantonov/java-dev/clojure-intellij-plugin-read-only/src/org/clojure/intellij/parser/ClojureElementTypes.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="13" selection-start="871" selection-end="871" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ClojureParserDefinition.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file:///Users/aantonov/java-dev/clojure-intellij-plugin-read-only/src/org/clojure/intellij/parser/ClojureParserDefinition.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="68" column="40" selection-start="2129" selection-end="2129" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ClojureElement.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file:///Users/aantonov/java-dev/clojure-intellij-plugin-read-only/src/org/clojure/intellij/parser/ClojureElement.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="64" column="54" selection-start="2148" selection-end="2148" vertical-scroll-proportion="0.0">
+            <state line="34" column="37" selection-start="1570" selection-end="1570" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -214,25 +303,54 @@
       <file leaf-file-name="ParserTest.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/ws/antonov/idea/plugin/protobuf/ParserTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="26" selection-start="907" selection-end="907" vertical-scroll-proportion="-0.38666666">
+            <state line="96" column="25" selection-start="3522" selection-end="3522" vertical-scroll-proportion="0.5331808">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HighlighterTest.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/ws/antonov/idea/plugin/protobuf/HighlighterTest.java">
+      <file leaf-file-name="ProtoElementTypes.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ws/antonov/idea/plugin/protobuf/parser/ProtoElementTypes.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="29" selection-start="232" selection-end="232" vertical-scroll-proportion="0.0">
+            <state line="23" column="82" selection-start="1070" selection-end="1070" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="plugin.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/META-INF/plugin.xml">
+      <file leaf-file-name="ProtoTokenTypes.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ws/antonov/idea/plugin/protobuf/lexer/ProtoTokenTypes.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="12" selection-start="488" selection-end="488" vertical-scroll-proportion="0.0">
+            <state line="28" column="92" selection-start="1114" selection-end="1114" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ProtoParserDefinition.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ws/antonov/idea/plugin/protobuf/parser/ProtoParserDefinition.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="72" column="46" selection-start="2511" selection-end="2511" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ProtoElement.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ws/antonov/idea/plugin/protobuf/parser/ProtoElement.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="60" column="0" selection-start="1780" selection-end="1780" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="class#Message#0;class#ProtoElement#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ClojureElement.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file:///Users/aantonov/java-dev/clojure-intellij-plugin-read-only/src/org/clojure/intellij/parser/ClojureElement.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="276" column="24" selection-start="10063" selection-end="10063" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -253,6 +371,9 @@
   <component name="ModuleEditorState">
     <option name="LAST_EDITED_MODULE_NAME" />
     <option name="LAST_EDITED_TAB_NAME" />
+  </component>
+  <component name="PackagesPane">
+    <subPane />
   </component>
   <component name="ProjectLevelVcsManager">
     <OptionsSetting value="true" id="Add" />
@@ -461,7 +582,7 @@
       <showLibraryContents />
       <hideEmptyPackages />
       <abbreviatePackageNames />
-      <showStructure ProjectPane="false" />
+      <showStructure PackagesPane="false" ProjectPane="false" />
       <autoscrollToSource />
       <autoscrollFromSource />
       <sortByType />
@@ -611,7 +732,7 @@
       <option name="ALTERNATIVE_JRE_PATH" value="" />
       <option name="PACKAGE_NAME" value="ws.antonov.idea.plugin.protobuf" />
       <option name="MAIN_CLASS_NAME" value="ws.antonov.idea.plugin.protobuf.ParserTest" />
-      <option name="METHOD_NAME" value="testInteger" />
+      <option name="METHOD_NAME" value="testOption" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="" />
       <option name="PARAMETERS" value="" />
@@ -749,41 +870,41 @@
     <editor active="false" />
     <layout>
       <window_info id="Web Preview" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32901832" sideWeight="0.5" order="7" side_tool="false" />
-      <window_info id="Dataflow to this" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" />
+      <window_info id="Dataflow to this" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" />
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" />
-      <window_info id="Regex" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32847682" sideWeight="0.5" order="20" side_tool="false" />
+      <window_info id="Regex" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32847682" sideWeight="0.5" order="22" side_tool="false" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32918552" sideWeight="0.5" order="7" side_tool="false" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18731989" sideWeight="0.77748346" order="0" side_tool="false" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32918552" sideWeight="0.5" order="9" side_tool="false" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18731989" sideWeight="0.6609272" order="0" side_tool="false" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3271523" sideWeight="0.5" order="1" side_tool="false" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24783862" sideWeight="0.5443709" order="1" side_tool="false" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="6" side_tool="false" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35496688" sideWeight="0.5" order="14" side_tool="false" />
-      <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="16" side_tool="false" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24783862" sideWeight="0.66225165" order="1" side_tool="false" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35496688" sideWeight="0.5" order="16" side_tool="false" />
+      <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="18" side_tool="false" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2353812" sideWeight="0.5" order="1" side_tool="false" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32918552" sideWeight="0.5" order="8" side_tool="false" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21324503" sideWeight="0.5" order="2" side_tool="false" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32918552" sideWeight="0.5" order="10" side_tool="false" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3960265" sideWeight="0.5" order="2" side_tool="false" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32847682" sideWeight="0.5" order="4" side_tool="false" />
-      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32980132" sideWeight="0.5" order="10" side_tool="false" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3139073" sideWeight="0.5" order="6" side_tool="false" />
+      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32980132" sideWeight="0.5" order="12" side_tool="false" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" />
       <window_info id="Code Outline" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" />
-      <window_info id="AccuRev Searches/Status" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32918552" sideWeight="0.5" order="11" side_tool="false" />
+      <window_info id="AccuRev Searches/Status" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32918552" sideWeight="0.5" order="13" side_tool="false" />
       <window_info id="Maven projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" />
-      <window_info id="Library Finder" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3291866" sideWeight="0.5" order="12" side_tool="false" />
-      <window_info id="Duplicates" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="17" side_tool="false" />
-      <window_info id="CVS" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="15" side_tool="false" />
+      <window_info id="Library Finder" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3291866" sideWeight="0.5" order="14" side_tool="false" />
+      <window_info id="Duplicates" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="19" side_tool="false" />
+      <window_info id="CVS" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="17" side_tool="false" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" />
-      <window_info id="AccuRev Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32918552" sideWeight="0.5" order="19" side_tool="false" />
+      <window_info id="AccuRev Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32918552" sideWeight="0.5" order="21" side_tool="false" />
       <window_info id="EJB" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" />
-      <window_info id="Profile" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4649321" sideWeight="0.5" order="13" side_tool="false" />
+      <window_info id="Profile" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4649321" sideWeight="0.5" order="15" side_tool="false" />
       <window_info id="Module Dependencies" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" />
-      <window_info id="WebServices" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="18" side_tool="false" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" />
+      <window_info id="WebServices" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="20" side_tool="false" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24967742" sideWeight="0.5" order="2" side_tool="false" />
       <window_info id="File View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" />
     </layout>
@@ -797,7 +918,7 @@
     <option name="PERFORM_CHECKOUT_IN_BACKGROUND" value="true" />
     <option name="PERFORM_ADD_REMOVE_IN_BACKGROUND" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="added instructions on how to generate the Lexer from the flex grammar file" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactored the code to be based on the clojure plugin - http://code.google.com/p/clojure-intellij-plugin/" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="REFORMAT_BEFORE_FILE_COMMIT" value="false" />
@@ -811,6 +932,7 @@
     <MESSAGE value="Initial commit of code" />
     <MESSAGE value="Initial commit of files" />
     <MESSAGE value="added instructions on how to generate the Lexer from the flex grammar file" />
+    <MESSAGE value="Refactored the code to be based on the clojure plugin - http://code.google.com/p/clojure-intellij-plugin/" />
   </component>
   <component name="VssConfiguration">
     <option name="CLIENT_PATH" value="" />
@@ -858,118 +980,116 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file:///Users/aantonov/java-dev/clojure-intellij-plugin-read-only/src/org/clojure/intellij/ClojureBraceMatcher.java">
+    <entry file="jar:///System/Library/Frameworks/JavaVM.framework/Versions/1.5/Home/src.jar!/src/java/lang/String.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="0" selection-start="861" selection-end="1578" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ws/antonov/idea/plugin/protobuf/parser/ProtoElementType.java">
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/idea.jar!/com/intellij/psi/impl/source/tree/ChameleonElement.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="21" selection-start="185" selection-end="185" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ws/antonov/idea/plugin/protobuf/ProtoSyntaxHighlighter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="37" selection-start="835" selection-end="835" vertical-scroll-proportion="0.0">
+        <state line="14" column="57" selection-start="740" selection-end="740" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ws/antonov/idea/plugin/protobuf/ProtoBraceMatcher.java">
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/idea.jar!/com/intellij/psi/impl/source/parsing/ChameleonTransforming.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="13" selection-start="372" selection-end="372" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/META-INF/plugin.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="12" selection-start="488" selection-end="488" vertical-scroll-proportion="0.0">
+        <state line="18" column="23" selection-start="879" selection-end="879" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file:///Users/aantonov/java-dev/clojure-intellij-plugin-read-only/META-INF/plugin.xml">
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/idea.jar!/com/intellij/lang/impl/PsiBuilderImpl.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="18" selection-start="769" selection-end="769" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///Users/aantonov/java-dev/clojure-intellij-plugin-read-only/src/org/clojure/intellij/parser/Expression.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="13" selection-start="655" selection-end="655" vertical-scroll-proportion="0.0">
+        <state line="48" column="46" selection-start="2758" selection-end="2758" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file:///Users/aantonov/java-dev/clojure-intellij-plugin-read-only/src/org/clojure/intellij/parser/ClojureParser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="13" selection-start="871" selection-end="871" vertical-scroll-proportion="0.0">
+        <state line="177" column="33" selection-start="6172" selection-end="6172" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file:///Users/aantonov/java-dev/clojure-intellij-plugin-read-only/src/org/clojure/intellij/parser/ClojureParserDefinition.java">
+    <entry file="file:///Users/aantonov/java-dev/clojure-intellij-plugin-read-only/src/org/clojure/intellij/parser/ClojureElementTypes.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="68" column="40" selection-start="2129" selection-end="2129" vertical-scroll-proportion="0.0">
+        <state line="34" column="37" selection-start="1570" selection-end="1570" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lexer/proto.flex">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="147" column="57" selection-start="5933" selection-end="5933" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ws/antonov/idea/plugin/protobuf/lexer/ProtoTokenTypes.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="92" selection-start="1114" selection-end="1114" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ws/antonov/idea/plugin/protobuf/lexer/_ProtobufLexer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="530" column="34" selection-start="15529" selection-end="15529" vertical-scroll-proportion="-0.0074626864">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ws/antonov/idea/plugin/protobuf/parser/ProtoElementTypes.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="82" selection-start="1070" selection-end="1070" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ws/antonov/idea/plugin/protobuf/parser/ProtoParserDefinition.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="72" column="46" selection-start="2511" selection-end="2511" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file:///Users/aantonov/java-dev/clojure-intellij-plugin-read-only/src/org/clojure/intellij/parser/ClojureElement.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="64" column="54" selection-start="2148" selection-end="2148" vertical-scroll-proportion="0.0">
+        <state line="276" column="24" selection-start="10063" selection-end="10063" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/ws/antonov/idea/plugin/protobuf/HighlighterTest.java">
+    <entry file="file://$PROJECT_DIR$/src/ws/antonov/idea/plugin/protobuf/parser/ProtoParser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="29" selection-start="232" selection-end="232" vertical-scroll-proportion="0.0">
+        <state line="75" column="0" selection-start="2541" selection-end="2541" vertical-scroll-proportion="-5.423077">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/idea.jar!/com/intellij/testFramework/fixtures/impl/HeavyTestFixtureBuilderImpl.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Users/aantonov/java-dev/idea-8-plugin/lib/src/src_openapi.zip!/com/intellij/testFramework/fixtures/TestFixtureBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="0" selection-start="738" selection-end="738" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/openapi.jar!/com/intellij/testFramework/fixtures/impl/TempDirTestFixtureImpl.class">
+    <entry file="jar:///Users/aantonov/java-dev/idea-8-plugin/lib/src/src_openapi.zip!/com/intellij/extapi/psi/ASTDelegatePsiElement.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar:///Users/aantonov/java-dev/idea-8-plugin/lib/src/src_openapi.zip!/com/intellij/testFramework/fixtures/IdeaTestFixture.java">
+    <entry file="file://$PROJECT_DIR$/src/ws/antonov/idea/plugin/protobuf/parser/ProtoElement.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="0" selection-start="927" selection-end="927" vertical-scroll-proportion="0.0">
-          <folding />
+        <state line="60" column="0" selection-start="1780" selection-end="1780" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="class#Message#0;class#ProtoElement#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/ws/antonov/idea/plugin/protobuf/ParserTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="26" selection-start="907" selection-end="907" vertical-scroll-proportion="-0.38666666">
+        <state line="96" column="25" selection-start="3522" selection-end="3522" vertical-scroll-proportion="0.5331808">
           <folding />
         </state>
       </provider>

@@ -12,10 +12,15 @@ public class ProtoElementTypes {
 
     public static final IElementType PACKAGE = new ProtoElementType("package");
     public static final IElementType OPTION  = new ProtoElementType("option");
-    public static final IElementType MESSAGE = new ProtoElementType("message");
 
+    public static final IElementType MESSAGE = new ProtoElementType("message");
     public static final IElementType ENUM = new ProtoElementType("enum");
+
     public static final IElementType REQUIRED = new ProtoElementType("required");
     public static final IElementType OPTIONAL  = new ProtoElementType("optional");
     public static final IElementType REPEATED = new ProtoElementType("repeated");
+
+    public static final IElementType KEYWORD = new ProtoElementType("keyword");
+    public static final IElementType ASSIGNMENT = new ProtoElementType("assignment");
+    public static final IElementType LITERAL = new ProtoElementType("literal");
 }
