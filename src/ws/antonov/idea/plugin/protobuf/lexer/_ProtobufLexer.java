@@ -24,13 +24,13 @@ public class _ProtobufLexer implements ProtoTokenTypes, FlexLexer {
    * Translates characters to character classes
    */
   private static final String ZZ_CMAP_PACKED = 
-    "\11\0\1\3\1\2\1\0\1\3\1\1\22\0\1\3\1\20\1\14"+
-    "\1\0\1\20\1\0\1\20\1\0\1\4\1\5\1\20\1\20\1\3"+
-    "\1\20\1\17\1\15\12\16\1\0\1\12\1\20\1\13\1\20\1\20"+
-    "\1\0\32\20\1\6\1\21\1\7\1\0\1\20\1\0\1\25\2\20"+
-    "\1\34\1\23\1\20\1\26\1\20\1\33\2\20\1\40\1\22\1\27"+
-    "\1\35\1\36\1\32\1\31\1\24\1\37\1\30\5\20\1\10\1\0"+
-    "\1\11\uff82\0";
+    "\11\0\1\3\1\2\1\0\1\3\1\1\22\0\1\3\1\30\1\14"+
+    "\1\0\1\30\1\0\1\30\1\0\1\4\1\5\1\30\1\30\1\3"+
+    "\1\30\1\17\1\15\12\16\1\0\1\12\1\30\1\13\1\30\1\30"+
+    "\1\0\32\30\1\6\1\31\1\7\1\0\1\30\1\0\1\25\1\30"+
+    "\1\33\1\43\1\23\1\24\1\35\1\30\1\37\1\30\1\34\1\26"+
+    "\1\41\1\40\1\36\1\32\1\44\1\21\1\27\1\20\1\22\2\30"+
+    "\1\42\2\30\1\10\1\0\1\11\uff82\0";
 
   /** 
    * Translates characters to character classes
@@ -44,12 +44,13 @@ public class _ProtobufLexer implements ProtoTokenTypes, FlexLexer {
 
   private static final String ZZ_ACTION_PACKED_0 =
     "\1\0\1\1\1\2\1\3\1\4\1\5\1\6\1\7"+
-    "\1\10\1\11\1\12\1\1\1\13\1\14\1\13\1\1"+
-    "\4\13\1\0\1\15\1\13\2\0\4\13\1\0\2\16"+
-    "\1\0\1\14\5\13\1\16\1\13\1\17\14\13\1\20";
+    "\1\10\1\11\1\12\1\1\1\13\1\14\5\13\1\1"+
+    "\3\13\1\0\1\15\1\13\2\0\10\13\1\0\2\16"+
+    "\1\0\1\14\11\13\1\16\1\17\2\13\1\20\14\13"+
+    "\1\21\2\13\1\22\1\13\1\23";
 
   private static int [] zzUnpackAction() {
-    int [] result = new int[55];
+    int [] result = new int[73];
     int offset = 0;
     offset = zzUnpackAction(ZZ_ACTION_PACKED_0, offset, result);
     return result;
@@ -74,16 +75,19 @@ public class _ProtobufLexer implements ProtoTokenTypes, FlexLexer {
   private static final int [] ZZ_ROWMAP = zzUnpackRowMap();
 
   private static final String ZZ_ROWMAP_PACKED_0 =
-    "\0\0\0\41\0\102\0\41\0\41\0\41\0\41\0\41"+
-    "\0\41\0\41\0\41\0\143\0\204\0\245\0\306\0\347"+
-    "\0\u0108\0\u0129\0\u014a\0\u016b\0\143\0\41\0\u018c\0\347"+
-    "\0\u01ad\0\u01ce\0\u01ef\0\u0210\0\u0231\0\u0252\0\u0273\0\41"+
-    "\0\u0294\0\u01ad\0\u02b5\0\u02d6\0\u02f7\0\u0318\0\u0339\0\u035a"+
-    "\0\u037b\0\306\0\u039c\0\u03bd\0\u03de\0\u03ff\0\u0420\0\u0441"+
-    "\0\u0462\0\u0483\0\u04a4\0\u04c5\0\u04e6\0\u0507\0\306";
+    "\0\0\0\45\0\112\0\45\0\45\0\45\0\45\0\45"+
+    "\0\45\0\45\0\45\0\157\0\224\0\271\0\336\0\u0103"+
+    "\0\u0128\0\u014d\0\u0172\0\u0197\0\u01bc\0\u01e1\0\u0206\0\157"+
+    "\0\45\0\u022b\0\u0197\0\u0250\0\u0275\0\u029a\0\u02bf\0\u02e4"+
+    "\0\u0309\0\u032e\0\u0353\0\u0378\0\u039d\0\u03c2\0\45\0\u03e7"+
+    "\0\u0250\0\u040c\0\u0431\0\u0456\0\u047b\0\u04a0\0\u04c5\0\u04ea"+
+    "\0\u050f\0\u0534\0\u0559\0\336\0\u057e\0\u05a3\0\336\0\u05c8"+
+    "\0\u05ed\0\u0612\0\u0637\0\u065c\0\u0681\0\u06a6\0\u06cb\0\u06f0"+
+    "\0\u0715\0\u073a\0\u075f\0\u0784\0\u07a9\0\u07ce\0\336\0\u07f3"+
+    "\0\336";
 
   private static int [] zzUnpackRowMap() {
-    int [] result = new int[55];
+    int [] result = new int[73];
     int offset = 0;
     offset = zzUnpackRowMap(ZZ_ROWMAP_PACKED_0, offset, result);
     return result;
@@ -107,36 +111,49 @@ public class _ProtobufLexer implements ProtoTokenTypes, FlexLexer {
 
   private static final String ZZ_TRANS_PACKED_0 =
     "\1\2\3\3\1\4\1\5\1\6\1\7\1\10\1\11"+
-    "\1\12\1\13\1\14\1\15\1\16\2\17\1\20\1\21"+
-    "\1\22\5\17\1\23\3\17\1\24\3\17\42\0\3\3"+
-    "\35\0\14\25\1\26\24\25\15\0\1\27\3\17\1\30"+
-    "\17\17\16\0\1\16\1\31\36\0\4\17\1\30\21\17"+
-    "\1\0\36\17\15\0\4\17\1\30\1\17\1\32\15\17"+
-    "\15\0\4\17\1\30\5\17\1\33\11\17\15\0\4\17"+
-    "\1\30\1\17\1\34\15\17\15\0\4\17\1\30\14\17"+
-    "\1\35\2\17\1\36\1\37\1\40\12\36\4\27\1\41"+
-    "\17\27\16\0\1\42\37\0\4\17\1\30\2\17\1\43"+
-    "\14\17\15\0\4\17\1\30\6\17\1\44\10\17\15\0"+
-    "\4\17\1\30\10\17\1\45\3\17\1\46\2\17\15\0"+
-    "\4\17\1\30\15\17\1\47\1\17\1\36\1\37\1\40"+
-    "\36\36\2\0\1\40\36\0\1\27\1\50\1\40\36\27"+
-    "\15\0\4\17\1\30\2\17\1\51\14\17\15\0\4\17"+
-    "\1\30\1\52\16\17\15\0\4\17\1\30\6\17\1\53"+
-    "\10\17\15\0\4\17\1\30\1\17\1\54\15\17\15\0"+
-    "\4\17\1\30\11\17\1\55\5\17\2\0\1\40\12\0"+
-    "\4\17\1\30\17\17\15\0\4\17\1\30\3\17\1\56"+
-    "\13\17\15\0\4\17\1\30\11\17\1\57\5\17\15\0"+
-    "\4\17\1\30\3\17\1\60\13\17\15\0\4\17\1\30"+
-    "\13\17\1\61\3\17\15\0\4\17\1\30\4\17\1\62"+
-    "\12\17\15\0\4\17\1\30\7\17\1\63\7\17\15\0"+
-    "\4\17\1\30\15\17\1\63\1\17\15\0\4\17\1\30"+
-    "\5\17\1\64\11\17\15\0\4\17\1\30\1\17\1\52"+
-    "\15\17\15\0\4\17\1\30\1\17\1\65\15\17\15\0"+
-    "\4\17\1\30\3\17\1\66\13\17\15\0\4\17\1\30"+
-    "\12\17\1\67\4\17\15\0\4\17\1\30\16\17\1\67";
+    "\1\12\1\13\1\14\1\15\1\16\1\17\1\20\1\21"+
+    "\1\17\1\22\1\23\4\17\1\24\1\25\3\17\1\26"+
+    "\2\17\1\27\3\17\46\0\3\3\41\0\14\30\1\31"+
+    "\30\30\15\0\1\32\13\17\1\33\13\17\16\0\1\16"+
+    "\1\34\42\0\14\17\1\33\13\17\15\0\4\17\1\35"+
+    "\7\17\1\33\13\17\15\0\6\17\1\36\5\17\1\33"+
+    "\13\17\15\0\14\17\1\33\6\17\1\37\1\17\1\40"+
+    "\2\17\15\0\10\17\1\41\3\17\1\33\15\17\1\0"+
+    "\42\17\15\0\10\17\1\42\3\17\1\33\13\17\15\0"+
+    "\14\17\1\33\1\43\12\17\15\0\6\17\1\44\5\17"+
+    "\1\33\13\17\1\45\1\46\1\47\12\45\14\32\1\50"+
+    "\13\32\16\0\1\51\43\0\5\17\1\52\6\17\1\33"+
+    "\13\17\15\0\14\17\1\33\1\53\11\17\1\54\15\0"+
+    "\5\17\1\55\6\17\1\33\13\17\15\0\3\17\1\56"+
+    "\10\17\1\33\13\17\15\0\11\17\1\57\2\17\1\33"+
+    "\13\17\15\0\14\17\1\33\1\17\1\60\11\17\15\0"+
+    "\3\17\1\61\10\17\1\33\13\17\15\0\12\17\1\62"+
+    "\1\17\1\33\13\17\1\45\1\46\1\47\42\45\2\0"+
+    "\1\47\42\0\1\32\1\63\1\47\42\32\15\0\6\17"+
+    "\1\64\5\17\1\33\13\17\15\0\6\17\1\65\5\17"+
+    "\1\33\13\17\15\0\5\17\1\66\6\17\1\33\13\17"+
+    "\15\0\14\17\1\33\7\17\1\67\3\17\15\0\6\17"+
+    "\1\70\5\17\1\33\13\17\15\0\12\17\1\52\1\17"+
+    "\1\33\13\17\15\0\14\17\1\33\2\17\1\71\10\17"+
+    "\15\0\14\17\1\33\5\17\1\72\5\17\15\0\12\17"+
+    "\1\73\1\17\1\33\13\17\2\0\1\47\12\0\14\17"+
+    "\1\33\13\17\15\0\10\17\1\74\3\17\1\33\13\17"+
+    "\15\0\14\17\1\33\5\17\1\75\5\17\15\0\14\17"+
+    "\1\33\6\17\1\76\4\17\15\0\10\17\1\77\3\17"+
+    "\1\33\13\17\15\0\14\17\1\33\4\17\1\100\6\17"+
+    "\15\0\10\17\1\101\3\17\1\33\13\17\15\0\3\17"+
+    "\1\102\10\17\1\33\13\17\15\0\4\17\1\102\7\17"+
+    "\1\33\13\17\15\0\14\17\1\33\11\17\1\67\1\17"+
+    "\15\0\14\17\1\33\3\17\1\103\7\17\15\0\14\17"+
+    "\1\33\6\17\1\104\4\17\15\0\14\17\1\33\3\17"+
+    "\1\105\7\17\15\0\6\17\1\106\5\17\1\33\13\17"+
+    "\15\0\6\17\1\107\5\17\1\33\13\17\15\0\10\17"+
+    "\1\110\3\17\1\33\13\17\15\0\6\17\1\67\5\17"+
+    "\1\33\13\17\15\0\14\17\1\33\11\17\1\111\1\17"+
+    "\15\0\11\17\1\111\2\17\1\33\13\17";
 
   private static int [] zzUnpackTrans() {
-    int [] result = new int[1320];
+    int [] result = new int[2072];
     int offset = 0;
     offset = zzUnpackTrans(ZZ_TRANS_PACKED_0, offset, result);
     return result;
@@ -177,11 +194,11 @@ public class _ProtobufLexer implements ProtoTokenTypes, FlexLexer {
   private static final int [] ZZ_ATTRIBUTE = zzUnpackAttribute();
 
   private static final String ZZ_ATTRIBUTE_PACKED_0 =
-    "\1\0\1\11\1\1\10\11\11\1\1\0\1\11\1\1"+
-    "\2\0\4\1\1\0\1\1\1\11\1\0\26\1";
+    "\1\0\1\11\1\1\10\11\14\1\1\0\1\11\1\1"+
+    "\2\0\10\1\1\0\1\1\1\11\1\0\41\1";
 
   private static int [] zzUnpackAttribute() {
-    int [] result = new int[55];
+    int [] result = new int[73];
     int offset = 0;
     offset = zzUnpackAttribute(ZZ_ATTRIBUTE_PACKED_0, offset, result);
     return result;
@@ -273,7 +290,7 @@ public class _ProtobufLexer implements ProtoTokenTypes, FlexLexer {
     char [] map = new char[0x10000];
     int i = 0;  /* index in packed string  */
     int j = 0;  /* index in unpacked array */
-    while (i < 124) {
+    while (i < 132) {
       int  count = packed.charAt(i++);
       char value = packed.charAt(i++);
       do map[j++] = value; while (--count > 0);
@@ -507,70 +524,82 @@ public class _ProtobufLexer implements ProtoTokenTypes, FlexLexer {
       zzMarkedPos = zzMarkedPosL;
 
       switch (zzAction < 0 ? zzAction : ZZ_ACTION[zzAction]) {
-        case 16: 
-          { return FIELD_DEF;
-          }
-        case 17: break;
-        case 2: 
-          { return WHITE_SPACE;
-          }
-        case 18: break;
-        case 12: 
-          { return NUMERIC_LITERAL;
-          }
-        case 19: break;
         case 7: 
           { return LEFT_CURLY;
           }
         case 20: break;
-        case 3: 
-          { return LEFT_PAREN;
+        case 19: 
+          { return FIELD_DEF;
           }
         case 21: break;
-        case 13: 
-          { return STRING_LITERAL;
+        case 14: 
+          { return COMMENT;
           }
         case 22: break;
         case 11: 
           { return KEY;
           }
         case 23: break;
-        case 15: 
-          { return OBJECT_DEF;
-          }
-        case 24: break;
-        case 14: 
-          { return COMMENT;
-          }
-        case 25: break;
-        case 10: 
-          { return EQUALS;
-          }
-        case 26: break;
-        case 5: 
-          { return LEFT_BRACKET;
-          }
-        case 27: break;
-        case 8: 
-          { return RIGHT_CURLY;
-          }
-        case 28: break;
         case 1: 
           { return BAD_CHARACTER;
           }
-        case 29: break;
-        case 4: 
-          { return RIGHT_PAREN;
+        case 24: break;
+        case 3: 
+          { return LEFT_PAREN;
           }
-        case 30: break;
-        case 9: 
-          { return SEMICOLON;
+        case 25: break;
+        case 17: 
+          { return OPTION;
           }
-        case 31: break;
+        case 26: break;
         case 6: 
           { return RIGHT_BRACKET;
           }
+        case 27: break;
+        case 4: 
+          { return RIGHT_PAREN;
+          }
+        case 28: break;
+        case 10: 
+          { return EQUALS;
+          }
+        case 29: break;
+        case 13: 
+          { return STRING_LITERAL;
+          }
+        case 30: break;
+        case 12: 
+          { return NUMERIC_LITERAL;
+          }
+        case 31: break;
+        case 2: 
+          { return WHITE_SPACE;
+          }
         case 32: break;
+        case 9: 
+          { return SEMICOLON;
+          }
+        case 33: break;
+        case 5: 
+          { return LEFT_BRACKET;
+          }
+        case 34: break;
+        case 8: 
+          { return RIGHT_CURLY;
+          }
+        case 35: break;
+        case 18: 
+          { return PACKAGE;
+          }
+        case 36: break;
+        case 15: 
+          { return BOOLEAN_LITERAL;
+          }
+        case 37: break;
+        case 16: 
+          { return OBJECT_DEF;
+          }
+        case 38: break;
         default:
           if (zzInput == YYEOF && zzStartRead == zzCurrentPos) {
             zzAtEOF = true;

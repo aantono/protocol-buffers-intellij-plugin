@@ -99,10 +99,29 @@ public class ParserTest extends TestCase {
 
     public void testMessage() {
         String sym =
-                "message Foo {}";
+                "message Foo {\n}";
         PsiFile element = parseIt(sym);
         assertEquals(element.getChildren()[2].getClass(), ProtoElement.Message.class);
         assertEquals(element.getChildren()[2].getNode().getElementType(), ProtoElementTypes.MESSAGE);
+    }
+
+    public void testFile() {
+        String sym =
+                "package error;\n" +
+                "\n" +
+                "option java_package = \"com.orbitz.proto.error\";\n" +
+                "option java_outer_classname = \"ErrorProtos\";\n" +
+                "option java_multiple_files = true;\n" +
+                "\n" +
+                "option optimize_for = SPEED;\n" +
+                "\n" +
+                "message ErrorMessage {\n" +
+                "  required string message = 1; // Error description\n" +
+                "  optional string data = t2; // Stack trace or any other relevant information\n" +
+                "  repeated string stuff = 3 [default = \"foo\"]; // Stuff\n" +
+                "}";
+        PsiFile element = parseIt(sym);
+        fail("no tests yet");
     }
 
     public void testString() {
@@ -121,5 +140,12 @@ public class ParserTest extends TestCase {
         assertEquals(element.getChildren()[0].getNode().getFirstChildNode().getElementType(), ProtoTokenTypes.NUMERIC_LITERAL);
     }
 
+    public void testComments() {
+        String sym =
+                "// Top Comment\npackage error; // Stuff\n";
+        PsiFile element = parseIt(sym);
+        assertEquals(ProtoElement.Package.class, element.getChildren()[0].getClass());
+        assertEquals(ProtoTokenTypes.COMMENT, element.getChildren()[2].getNode().getElementType());
+    }
 
 }

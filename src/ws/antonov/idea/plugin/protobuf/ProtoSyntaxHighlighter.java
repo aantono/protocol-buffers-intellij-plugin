@@ -67,6 +67,7 @@ public class ProtoSyntaxHighlighter extends SyntaxHighlighterBase {
 
     @NotNull
     public TextAttributesKey[] getTokenHighlights(IElementType tokenType) {
+        System.out.println("Asking for highlights for " + tokenType + " - " + keys.get(tokenType));
         return pack(keys.get(tokenType));
     }
 }

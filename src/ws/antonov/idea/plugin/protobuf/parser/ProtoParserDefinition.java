@@ -59,6 +59,8 @@ public class ProtoParserDefinition implements ParserDefinition {
             return new ProtoElement.Package(node);
         } else if (type == ProtoElementTypes.MESSAGE) {
             return new ProtoElement.Message(node);
+        } else if (type == ProtoElementTypes.EXTEND) {
+            return new ProtoElement.Extend(node);
         } else if (type == ProtoElementTypes.OPTION) {
             return new ProtoElement.Option(node);
         /*} else if (type == ProtoElementTypes.VARIABLE) {
@@ -75,6 +77,8 @@ public class ProtoParserDefinition implements ParserDefinition {
             return new ProtoElement.Keyword(node);
         } else if (type == ProtoElementTypes.LITERAL) {
             return new ProtoElement.Literal(node);
+        } else if (ProtoElementTypes.FIELDS.contains(type)) {
+            return new ProtoElement.Field(node);
         /*} else if (type == ProtoElementTypes.TOPLIST) {
             return new ProtoElement.TopList(node);
         } else if (type == ProtoElementTypes.LIST) {

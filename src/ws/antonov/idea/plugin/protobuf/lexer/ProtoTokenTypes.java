@@ -22,11 +22,11 @@ public interface ProtoTokenTypes {
 //    IElementType OPTIONAL  = new ProtoElementType("OPTIONAL");
 //    IElementType REPEATED = new ProtoElementType("REPEATED");
 
-    IElementType DEFAULT = new ProtoElementType("DEFAULT");
+//    IElementType DEFAULT = new ProtoElementType("DEFAULT");
 
     IElementType KEY = new ProtoElementType("KEY");
 
-    TokenSet KEYWORDS = TokenSet.create(PACKAGE, OPTION, FIELD_DEF, OBJECT_DEF, DEFAULT, KEY);
+    TokenSet KEYWORDS = TokenSet.create(PACKAGE, OPTION, FIELD_DEF, OBJECT_DEF);
 
     IElementType DOUBLE = new ProtoElementType("DOUBLE");
     IElementType FLOAT = new ProtoElementType("FLOAT");
